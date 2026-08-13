@@ -30,6 +30,7 @@
 * 🌿 **Eco Score & Badge System** – Receive an easy-to-understand sustainability score with achievement badges.
 * 💡 **Personalized Recommendations** – Get practical suggestions for reducing your environmental impact.
 * 📈 **Progress Tracking** – Save assessment history locally to monitor improvements over time.
+* 🧘 **AI Eco Persona Generator** – Analyzes your behavior across transport, diet, energy, water, waste, and gamification data to assign a personalized eco persona with strengths, next steps, and a downloadable persona card.
 * 📄 **PDF Report Export** – Download detailed carbon footprint reports for future reference or sharing.
 * ⚡ **Offline Support** – Automatically falls back to static emission factors if an API key is unavailable.
 * 🎨 **Modern User Interface** – Responsive and visually appealing Streamlit dashboard with an intuitive workflow.
@@ -134,6 +135,7 @@ eco-buddy-ai/
 ├── recommendations.py         # Personalized recommendation engine
 ├── report.py                  # PDF report generation
 ├── requirements.txt           # Project dependencies
+├── units.py                   # Unit conversion, currency, and localized formatting
 ├── water.py                   # Household water footprint calculations
 ├── eco_buddy.db               # Local SQLite database (auto-generated)
 │
@@ -141,6 +143,7 @@ eco-buddy-ai/
 │   ├── Carbon_Footprint.py
 │   ├── Data_Health.py
 │   ├── Data_Portability.py
+│   ├── Display_Settings.py
 │   ├── Emission_Factors.py
 │   ├── Gamification.py
 │   ├── Home_Energy_Audit.py
@@ -162,6 +165,7 @@ eco-buddy-ai/
 ├── test_goals.py
 ├── test_marketplace.py
 ├── test_recommendations.py
+├── test_units.py
 └── test_water.py
 ```
 
@@ -189,6 +193,7 @@ eco-buddy-ai/
 | `data_io.py`         | Exports/imports assessment data as JSON or CSV     |
 | `emission_factors.py` | Immutable versioned emission factor sets with source provenance, cross-version recalculation, and diffing |
 | `emissions.py`       | Calculates annual carbon emissions                 |
+| `eco_persona.py`     | Analyzes user behavior and assigns a personalized eco persona with strengths, improvement opportunities, and a downloadable persona card |
 | `energy_audit.py`    | Calculates appliance energy use, cost, and solar payback/ROI |
 | `gamification.py`    | Manages XP, levels, streaks, challenges, and badges |
 | `goals.py`           | Reduction goal pathways, on-track status, projections, and per-category reduction allocation |
@@ -197,9 +202,10 @@ eco-buddy-ai/
 | `ocr_utils.py`       | Extracts text from uploaded PDFs/images for auto data entry |
 | `recommendations.py` | Generates personalized eco-friendly suggestions    |
 | `report.py`          | Generates downloadable PDF footprint reports       |
+| `units.py`           | Metric/imperial conversion, currency formatting, and per-user display preferences |
 | `water.py`           | Calculates household water footprint from daily habits |
 | `styles/theme.py`    | Applies the shared custom CSS theme across pages   |
-| `pages/*.py`         | Streamlit multi-page sections (Carbon Footprint, Water Footprint, Home Energy Audit, Route Planning, Gamification, Data Portability) |
+| `pages/*.py`         | Streamlit multi-page sections (Carbon Footprint, Water Footprint, Home Energy Audit, Route Planning, Gamification, Eco Persona, Data Portability) |
 
 ---
 
